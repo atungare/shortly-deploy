@@ -47,6 +47,11 @@ module.exports = function(grunt) {
         files: {
           './public/dist/lib.min.js': ['./public/dist/lib.js']
         }
+      },
+      my_css: {
+        files: {
+          './public/dist/style.css': ['./public/style.css']
+        }
       }
     },
 
