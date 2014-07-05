@@ -47,11 +47,6 @@ module.exports = function(grunt) {
         files: {
           './public/dist/lib.min.js': ['./public/dist/lib.js']
         }
-      },
-      my_css: {
-        files: {
-          './public/dist/style.css': ['./public/style.css']
-        }
       }
     },
 
@@ -70,6 +65,10 @@ module.exports = function(grunt) {
     },
 
     cssmin: {
+      css: {
+        src: './public/style.css',
+        dest: './public/dist/style.css'
+      }
     },
 
     watch: {
@@ -126,7 +125,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'concat', 'uglify'
+    'concat', 'uglify', 'cssmin'
   ]);
 
   grunt.registerTask('upload', function(n) {
