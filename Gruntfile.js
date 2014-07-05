@@ -12,6 +12,10 @@ module.exports = function(grunt) {
             './public/client/createLinkView.js',
             './public/client/router.js'],
         dest: './public/dist/app.js'
+      },
+      lib: {
+        src:['./public/lib/backbone.js', './public/lib/handlebars.js', './public/lib/jquery.js', './public/lib/underscore.js'],
+        dest: './public/dist/lib.js'
       }
     },
 
@@ -31,6 +35,19 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      my_app: {
+        files: {
+          './public/dist/app.min.js': ['./public/dist/app.js']
+        }
+      },
+      my_lib: {
+        options: {
+          mangle: false
+        },
+        files: {
+          './public/dist/lib.min.js': ['./public/dist/lib.js']
+        }
+      }
     },
 
     jshint: {
@@ -104,7 +121,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'concat'
+    'concat', 'uglify'
   ]);
 
   grunt.registerTask('upload', function(n) {
