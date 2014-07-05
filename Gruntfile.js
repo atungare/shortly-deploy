@@ -51,15 +51,15 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      files: [
-        // Add filespec list here
-      ],
+      files: {
+        src: ['./public/dist/app.min.js']
+      },
       options: {
         force: 'true',
         jshintrc: '.jshintrc',
         ignores: [
           'public/lib/**/*.js',
-          'public/dist/**/*.js'
+          // 'public/dist/**/*.js'
         ]
       }
     },
@@ -125,7 +125,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'concat', 'uglify', 'cssmin'
+    'concat', 'uglify', 'cssmin', 'jshint'
   ]);
 
   grunt.registerTask('upload', function(n) {
