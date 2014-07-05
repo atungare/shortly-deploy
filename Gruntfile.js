@@ -4,7 +4,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       dist: {
-        src:['./public/client/link.js',
+        src:['./public/client/app.js',
+            './public/client/link.js',
             './public/client/links.js',
             './public/client/linkView.js',
             './public/client/linksView.js',
