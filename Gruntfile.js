@@ -59,7 +59,7 @@ module.exports = function(grunt) {
         ]
       },
       files: {
-        src: ['./public/dist/app.min.js']
+        src: ['./public/client/**/*.js']
       }
     },
 
@@ -124,7 +124,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'concat', 'uglify', 'cssmin', 'jshint'
+    'jshint', 'concat', 'uglify', 'cssmin'
   ]);
 
   grunt.registerTask('upload', function(n) {
