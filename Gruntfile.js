@@ -51,16 +51,15 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      files: {
-        src: ['./public/dist/app.min.js']
-      },
       options: {
-        force: 'false',
         jshintrc: '.jshintrc',
         ignores: [
           'public/lib/**/*.js',
           // 'public/dist/**/*.js'
         ]
+      },
+      files: {
+        src: ['./public/dist/app.min.js']
       }
     },
 
